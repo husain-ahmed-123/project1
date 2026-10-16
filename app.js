@@ -3,10 +3,12 @@ const buttonEle = document.querySelector("#start-game");
 const resetEle = document.querySelector("#restart");
 const lettersEle = document.querySelectorAll("#letters");
 const categoryEle = document.querySelectorAll("#category-menu");
+const wordDisplayEle = document.querySelector("#word-display");
 console.log(buttonEle);
 console.log(resetEle);
 console.log(lettersEle);
 console.log(categoryEle);
+conslole.log(wordDisplayEle);
 
 /*-------------------------------- Constants --------------------------------*/
 
@@ -163,14 +165,24 @@ let secretWord = "";
 let guessCount = [];
 let maxmistakes = 8;
 let mistakes = 0;
+let underscore = [];
 /*-------------------------------- Functions --------------------------------*/
-
+function startGame() {
+  selectCategory = categoryEle.value;
+  const wordList = categories[selectCategory];
+  const randomIndex = Math.floor(Math.random() * wordList.length);
+  secretWord = wordList[randomIndex];
+  console.log(secretWord);
+  for (let i = 0; i < secretWord.length; i++) {
+    underscore.push("_");
+    wordDisplayEle.textContent = underscore.join(" ");
+  }
+  console.log(underscore);
+}
 /*----------------------------- Event Listeners -----------------------------*/
 buttonEle.addEventListener("click", startGame);
 resetEle.addEventListener("click", resetGame);
 lettersEle.forEach((letter) => {
   letter.addEventListener("click", handleGuess);
 });
-categoryEle.forEach((category) => {
-  category.addEventListener("click", selectCategory);
-});
+categoryEle.addEventListener("change", selectCategory);
