@@ -176,6 +176,26 @@ function selectCategory(event) {
 function selectLetter(event) {
   const letter = event.target.textContent.toLowerCase();
   console.log(letter);
+
+  if (secretWord.includes(letter)) {
+    for (let i = 0; i < secretWord.length; i++) {
+      if (secretWord[i] === letter) {
+        underscore[i] = letter;
+      }
+    }
+    wordDisplayEle.textContent = underscore.join(" ");
+  } else {
+    mistakes++;
+    console.log(`Mistakes: ${mistakes}`);
+  }
+
+  if (mistakes >= maxmistakes) {
+    console.log("Game Over! You've run out of tries.");
+    restart();
+  } else if (!underscore.includes("_")) {
+    console.log("Congratulations! You've guessed the word!");
+    restart();
+  }
 }
 function restart() {
   secretWord = "";
@@ -191,6 +211,8 @@ function startGame() {
   const randomIndex = Math.floor(Math.random() * wordList.length);
   secretWord = wordList[randomIndex].toLowerCase();
   console.log(secretWord);
+  document.getElementById("start-game").disabled = true;
+  document.getElementById("letters").disabled = true;
   for (let i = 0; i < secretWord.length; i++) {
     underscore.push("_");
   }
