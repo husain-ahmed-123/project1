@@ -4,6 +4,8 @@ const resetEle = document.querySelector("#restart");
 const lettersEle = document.querySelector("#letters");
 const categoryEle = document.querySelector("#category-menu");
 const wordDisplayEle = document.querySelector("#word-display");
+const displayEle = document.querySelector(".display");
+console.log(displayEle);
 console.log(buttonEle);
 console.log(resetEle);
 console.log(lettersEle);
@@ -176,6 +178,7 @@ function selectCategory(event) {
 function selectLetter(event) {
   const letter = event.target.textContent.toLowerCase();
   console.log(letter);
+  event.target.disabled = true;
 
   if (secretWord.includes(letter)) {
     for (let i = 0; i < secretWord.length; i++) {
@@ -188,9 +191,11 @@ function selectLetter(event) {
     mistakes++;
     console.log(`Mistakes: ${mistakes}`);
   }
+  updateDisplay();
 
   if (mistakes >= maxmistakes) {
     console.log("Game Over! You've run out of tries.");
+
     restart();
   } else if (!underscore.includes("_")) {
     console.log("Congratulations! You've guessed the word!");
@@ -204,6 +209,10 @@ function restart() {
   underscore = [];
   wordDisplayEle.textContent = "";
   console.log("Game restarted");
+  document.getElementById("start-game").disabled = false;
+  for (const button of lettersEle.children) {
+    button.disabled = false;
+  }
 }
 
 function startGame() {
@@ -212,13 +221,22 @@ function startGame() {
   secretWord = wordList[randomIndex].toLowerCase();
   console.log(secretWord);
   document.getElementById("start-game").disabled = true;
-  document.getElementById("letters").disabled = true;
+
   for (let i = 0; i < secretWord.length; i++) {
     underscore.push("_");
   }
   wordDisplayEle.textContent = underscore.join(" ");
   console.log("category:", selectCategory);
   console.log("secretWord:", secretWord);
+}
+function updateDisplay() {
+  if (mistakes >= maxmistakes) {
+    displayEle.textContent = "Game Over! You've run out of tries.";
+  } else if (!underscore.includes("_")) {
+    displayEle.textContent = "Congratulations! You've guessed the word!";
+  } else {
+    displayEle.textContent = `Mistakes: ${mistakes} / ${maxmistakes}`;
+  }
 }
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -231,3 +249,4 @@ lettersEle.addEventListener("click", (event) => {
 });
 
 categoryEle.addEventListener("click", selectCategory);
+displayEle.addEventListener("click", updateDisplay);
