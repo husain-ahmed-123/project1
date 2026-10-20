@@ -1,126 +1,162 @@
 
-
-h1{
-    display: flex;
-    align-items: center;
-    text-align: center;
-color: purple;
-    flex-direction: column;
-    
-}
-p{ display: flex;
-    align-items: center;
-    text-align: center;
-    color: purple;
-    flex-direction: column;}
-    #start-game{
-        border-radius: 9px;
-        display: flex;
-    align-items: center;
-    text-align: center;
-    color: purple;
-    flex-direction: row;
-
-    }
-    #restart{
-        border-radius: 9px;
-        display: flex;
-    align-items: center;
-    text-align: center;
-    color: purple;
-    flex-direction: column;
-    }
-body{
-
-    
-  background-color: whitesmoke;
-  color: black;
-  border-radius: 50px;
-  padding: 6px 15px;
-  display: flex;
-     justify-content: space-between;
-      align-items: center;
-      
-      
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eaf2f8;
+  text-align: center;
+  color: #2c3e50;
 }
 
-.letters{
-    display: flex;
-     flex-direction: row;
-     text-align: center;
-     gap: 9px;
-     flex-wrap: wrap;
-     align-items: center;
-
-
+header {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 700px;
+  border-radius: 10px;
 }
 
+h1 {
+  color: #6c5ce7;
+}
 
-
-
-.letters button{
-      border-radius: 9px;
-  padding: 10px 16px;
-  border: 1px solid black;
-  background-color: purple;
-  gap: 300px;
+#sr button {
+  background-color: #6c5ce7;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
   
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eaf2f8;
+  text-align: center;
+  color: #2c3e50;
+}
 
+header {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 700px;
+  border-radius: 10px;
 }
-img{
-    height: 300px;
-    width: 300px;
-    display: flex;
-   justify-content: center;
-   align-items: center;
+
+h1 {
+  color: #6c5ce7;
 }
-#sr{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-   border-radius: 9px;
-  padding: 10px 16px;
-  border: 1px solid purple;
-  background-color: black;
-  gap: 300px;
+
+#sr button {
+  background-color: #6c5ce7;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#sr button:hover {
+  background-color: #4834d4;
+}
+
+.letters {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.letters button {
+  padding: 10px;
+  background-color: #dfe6e9;
+  border: none;
+  border-radius: 5px;
   
 }
-#category-menu{
-        display: flex;
-     flex-direction: row;
-     text-align: center;
-     gap: 9px;
-     flex-wrap: wrap;
-     align-items: center;
-        border-radius: 15px;
-  padding: 10px 16px;
-  border: 1px solid black;
-  background-color: purple;
- 
-}
-#ata-category{
-          border-radius: 9px;
-  padding: 10px 16px;
-  border: 1px solid black;
-  background-color: purple;
-  gap: 300px;
-}
-/*
-#category-menu{  display: flex;
-     flex-direction: row;
-     text-align: center;
-     gap: 9px;
-     flex-wrap: wrap;
-     align-items: center; 
-    border-radius: 9px;  }
 
-     .category-menu button{  display: flex;
-     flex-direction: row;
-     text-align: center;
-     gap: 9px;
-     flex-wrap: wrap;
-     align-items: center;  
-     }
-     
-*/
+.letters button:hover {
+  background-color: #74b9ff;
+  color: white;
+}
+
+#category-menu button {
+  background-color: #00b894;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#category-menu button:hover {
+  background-color: #008f72;
+}
+
+#word-display {
+  font-size: 25px;
+  margin: 20px;
+  color: #2d3436;
+}
+
+.display {
+  font-weight: bold;
+  color: #e17055;
+}
+
+#hangman-image {
+  width: 180px;
+}
+
+}
+
+#sr button:hover {
+  background-color: #4834d4;
+}
+
+.letters {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.letters button {
+  padding: 10px;
+  background-color: #dfe6e9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.letters button:hover {
+  background-color: #74b9ff;
+  color: white;
+}
+
+#category-menu button {
+  background-color: #00b894;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+
+}
+
+#category-menu button:hover {
+  background-color: #008f72;
+}
+
+#word-display {
+  font-size: 25px;
+  margin: 20px;
+  color: #2d3436;
+}
+
+.display {
+  font-weight: bold;
+  color: #e17055;
+}
+
+#hangman-image {
+  width: 180px;
+}
