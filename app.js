@@ -180,6 +180,7 @@ function selectLetter(event) {
   const letter = event.target.textContent.toLowerCase();
   console.log(letter);
   event.target.disabled = true;
+  lettersEle[event.target].classList.add("flip");
 
   if (secretWord.includes(letter)) {
     for (let i = 0; i < secretWord.length; i++) {

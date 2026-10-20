@@ -51,6 +51,7 @@ h1 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  
 }
 
 #sr button:hover {
@@ -69,7 +70,7 @@ h1 {
   background-color: #dfe6e9;
   border: none;
   border-radius: 5px;
-  
+  cursor: pointer;
 }
 
 .letters button:hover {
