@@ -5,6 +5,7 @@ const lettersEle = document.querySelector("#letters");
 const categoryEle = document.querySelector("#category-menu");
 const wordDisplayEle = document.querySelector("#word-display");
 const displayEle = document.querySelector(".display");
+const hangmanImage = document.querySelector("#hangman-image");
 console.log(displayEle);
 console.log(buttonEle);
 console.log(resetEle);
@@ -189,6 +190,7 @@ function selectLetter(event) {
     wordDisplayEle.textContent = underscore.join(" ");
   } else {
     mistakes++;
+    hangmanImage.src = `./images/${mistakes}.png`;
     console.log(`Mistakes: ${mistakes}`);
   }
   updateDisplay();
