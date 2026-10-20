@@ -234,6 +234,7 @@ function startGame() {
 function updateDisplay() {
   if (mistakes >= maxmistakes) {
     displayEle.textContent = "Game Over! You've run out of tries.";
+    displayEle.textContent = "the word is: " + secretWord;
   } else if (!underscore.includes("_")) {
     displayEle.textContent = "Congratulations! You've guessed the word!";
   } else {
