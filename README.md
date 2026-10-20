@@ -1,6 +1,6 @@
 # project name
 
-hang man game
+hangman game
 
 ## technologies used
 
