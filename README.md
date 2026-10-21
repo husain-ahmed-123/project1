@@ -14,12 +14,14 @@ The Hangman Game is a simple word-guessing game developed using HTML, CSS, and J
 
 ## user stories
 
-1. As a player, I want the game to select a random hidden word so that I can play a different round each time.
+1. as a player , i want to choose the category first.
 
-2. As a player, I want to select letters using an on-screen keyboard so that I can guess the hidden word.
+2. As a player, I want the game to select a random hidden word from the category that i selected.
 
-3. As a player, I want the game to display the correctly guessed letters and update the hangman drawing after an incorrect guess so that I can track my progress.
+3. As a player, I want to select letters using an on-screen keyboard so that I can guess the hidden word.
 
-4. As a player, I want to receive a win or lose message when the game ends so that I know whether I guessed the word successfully.
+4. As a player, I want the game to display the correctly guessed letters and update the hangman drawing after an incorrect guess so that I can track my progress.
 
-5. As a player, I want to restart the game after a round finishes so that I can play again with a new word.
+5. As a player, I want to receive a win or lose message when the game ends so that I know whether I guessed the word successfully.
+
+6. As a player, I want to restart the game after a round finishes so that I can play again with a new word.
